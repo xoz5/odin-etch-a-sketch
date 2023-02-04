@@ -5,8 +5,8 @@ addDivsToGridContainer(gridItemCount);
 
 function addDivsToGridContainer(gridItemCount) {
     let i = 0;
-    let n = 0;
     while(i < gridItemCount) {
+        let n = 0;
         while(n < gridItemCount) {
             let gridItem = document.createElement('div');
             gridContainer.appendChild(gridItem);
