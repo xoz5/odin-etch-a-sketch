@@ -16,5 +16,5 @@ function addDivsToGridContainer(gridItemCount) {
     
     // Change div colors by hovering
     const divs = document.querySelectorAll('.grid-container>div');
-    divs.forEach(div => addEventListener('hover', changeGridColorByHover));
+    divs.forEach(div => addEventListener('mouseover', changeGridColorByHover));
 }
