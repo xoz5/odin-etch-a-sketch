@@ -32,7 +32,15 @@ function changeGridSize() {
         gridSizePreference = prompt('Input a grid size of less than or equal to 100');
     } while(gridSizePreference > 100);
 
+    removeChildren(gridContainer);
+
     gridContainer.setAttribute('style', `grid-template-rows: repeat(${gridSizePreference}, auto); grid-template-columns: repeat(${gridSizePreference},auto);`);
 
     addDivsToGridContainer(gridSizePreference);
+}
+
+function removeChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
 }
