@@ -20,6 +20,6 @@ function addDivsToGridContainer(gridItemCount) {
 }
 
 function changeGridColorByHover(divHovered) {
-    let hesh = '#' + Math.floor(Math.random()*16777215).toString(16);
-    divHovered.target.style.backgroundColor = hesh;
+    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    divHovered.target.style.backgroundColor = randomColor;
 }
