@@ -18,3 +18,8 @@ function addDivsToGridContainer(gridItemCount) {
     const divs = document.querySelectorAll('.grid-container>div');
     divs.forEach(div => div.addEventListener('mouseover', changeGridColorByHover));
 }
+
+function changeGridColorByHover(divHovered) {
+    let hesh = '#' + Math.floor(Math.random()*16777215).toString(16);
+    divHovered.target.style.backgroundColor = hesh;
+}
