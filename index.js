@@ -1,4 +1,5 @@
 let gridItemCount = 16;
+let darkerColor = 1;
 const gridContainer = document.querySelector('.grid-container');
 const btn = document.querySelector('button');
 btn.addEventListener('click', changeGridSize);
@@ -21,8 +22,11 @@ function addDivsToGridContainer(gridItemCount) {
 }
 
 function changeGridColorByHover(divHovered) {
-    let randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    divHovered.target.style.backgroundColor = randomColor;
+    let redDark = (Math.floor(Math.random()*255)*darkerColor);
+    let greenDark = (Math.floor(Math.random()*255)*darkerColor);
+    let blueDark = (Math.floor(Math.random()*255)*darkerColor);
+    divHovered.target.style.backgroundColor = `rgb(${redDark}, ${greenDark}, ${blueDark})`;
+    darkerColor -= 0.1;
 }
 
 function changeGridSize() {
