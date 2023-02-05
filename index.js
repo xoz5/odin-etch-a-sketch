@@ -35,7 +35,7 @@ function changeGridSize() {
     do {
         gridSizePreference = prompt('Input a grid size of less than or equal to 100');
     } while(gridSizePreference > 100);
-
+    darkerColor = 1;
     removeChildren(gridContainer);
 
     gridContainer.setAttribute('style', `grid-template-rows: repeat(${gridSizePreference}, auto); grid-template-columns: repeat(${gridSizePreference},auto);`);
