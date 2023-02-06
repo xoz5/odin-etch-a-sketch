@@ -22,9 +22,9 @@ function addDivsToGridContainer(gridSizePreference) {
 }
 
 function changeGridColorByHover(divHovered) {
-    let redDark = (Math.floor(Math.random()*255)*darkerColor);
-    let greenDark = (Math.floor(Math.random()*255)*darkerColor);
-    let blueDark = (Math.floor(Math.random()*255)*darkerColor);
+    let redDark = (Math.floor(Math.random() * 255) * darkerColor);
+    let greenDark = (Math.floor(Math.random() * 255) * darkerColor);
+    let blueDark = (Math.floor(Math.random() * 255) * darkerColor);
     divHovered.target.style.backgroundColor = `rgb(${redDark}, ${greenDark}, ${blueDark})`;
     darkerColor -= 0.1;
 }
