@@ -1,15 +1,15 @@
-let gridItemCount = 16;
+let defaultGridSize = 16;
 let darkerColor = 1;
 const gridContainer = document.querySelector('.grid-container');
 const btn = document.querySelector('button');
 btn.addEventListener('click', changeGridSize);
-addDivsToGridContainer(gridItemCount);
+addDivsToGridContainer(defaultGridSize);
 
-function addDivsToGridContainer(gridItemCount) {
+function addDivsToGridContainer(gridSizePreference) {
     let i = 0;
-    while(i < gridItemCount) {
+    while(i < gridSizePreference) {
         let n = 0;
-        while(n < gridItemCount) {
+        while(n < gridSizePreference) {
             let gridItem = document.createElement('div');
             gridContainer.appendChild(gridItem);
             n++;
@@ -34,17 +34,20 @@ function changeGridSize() {
 
     do {
         gridSizePreference = prompt('Input a grid size of less than or equal to 100');
-    } while(gridSizePreference > 100);
+    } while (gridSizePreference > 100);
     darkerColor = 1;
     removeChildren(gridContainer);
 
-    gridContainer.setAttribute('style', `grid-template-rows: repeat(${gridSizePreference}, auto); grid-template-columns: repeat(${gridSizePreference},auto);`);
+    gridContainer.setAttribute(
+        'style',
+        `grid-template-rows: repeat(${gridSizePreference}, auto); grid-template-columns: repeat(${gridSizePreference},auto);`
+    );
 
     addDivsToGridContainer(gridSizePreference);
 }
 
-function removeChildren(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+function removeChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
     }
 }
